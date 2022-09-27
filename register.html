@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Log In - Plantr</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pics/ico.png">
+  </head>
+
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <header>
+      <a href="index.html">
+        <img id="mainLogo" src="pics/plantrLogo.png">
+        <div class="homeIcon">
+          <img src="pics/logoHover.png" class="iconHover">
+          <img src="pics/home1.png" id="home">
+        </div>
+      </a>
+      <section id="time"></section>
+      <script src="js/time.js"></script>
+      <section id="headerQuotes"></section>
+      <script src="js/quotes.js"></script>
+    </header>
+    <main>
+      <section id="mainLeft"></script></section>
+      <section id="registerCenter">
+        <p id="registerTitle">Sign in to Plantr</p>
+        <div id="firebaseui-auth-container"></div>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+            authDomain: "prosjekt2-database.firebaseapp.com",
+            databaseURL: "https://prosjekt2-database.firebaseio.com",
+            projectId: "prosjekt2-database",
+            storageBucket: "prosjekt2-database.appspot.com",
+            messagingSenderId: "804866777162"
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function() {
+            window.location.assign('<your-privacy-policy-url>');
+            }
+        };
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+      </section>
+      <section id="mainRight"></section>
+    </main>
+  </body>
+</html>

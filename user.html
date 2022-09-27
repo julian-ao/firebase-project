@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Plantr</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pics/ico.png">
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <header>
+      <a href="index.html">
+        <img id="mainLogo" src="pics/plantrLogo.png">
+        <div class="homeIcon">
+          <img src="pics/logoHover.png" class="iconHover">
+          <img src="pics/home1.png" id="home">
+        </div>
+      </a>
+      <section id="time"></section>
+      <script src="js/time.js"></script>
+      <section id="headerQuotes"></section>
+      <script src="js/quotes.js"></script>
+    </header>
+    <main>
+      <section id="mainLeft">
+        <section id="leftLogIn">
+          <script src="js/greet.js"></script>
+          <p id="signedInText">You are not currently signed in.</p>
+          <a href="register.html"><button class="logInButton" type="button" id="registerButton">Sign in using Google</button></a>
+          <br>
+        </section>
+      </section>
+      <section id="mainCenter">
+        <section id="userProfile"></section>
+        <section id="sortMobile">
+          Sort posts by
+          <button class="sortButton" type="button" onClick="ProfileNew()">Newest</button>
+          <button class="sortButton" type="button" onClick="ProfileOld()">Oldest</button>
+        </section>
+        <section id="userPosts"></section>
+      </section>
+      <section id="mainRight">
+        <p id="sortTextRight">Sort posts by</p>
+        <section id="sortButtons">
+          <button class="sortButton" type="button" onClick="ProfileNew()">Newest</button>
+          <button class="sortButton" type="button" onClick="ProfileOld()">Oldest</button>
+        </section>
+      </section>
+    </main>
+    <script src="js/user.js"></script>
+  </body>
+</html>

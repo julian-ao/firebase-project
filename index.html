@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Plantr</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pics/ico.png">
+    <style></style>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <header>
+      <a href="index.html">
+        <img id="mainLogo" src="pics/plantrLogo.png">
+        <div class="homeIcon">
+          <img src="pics/logoHover.png" class="iconHover">
+          <img src="pics/home1.png" id="home">
+        </div>
+      </a>
+      <section id="time"></section>
+      <script src="js/time.js"></script>
+      <section id="headerQuotes"></section>
+      <script src="js/quotes.js"></script>
+    </header>
+    <main>
+      <section id="mainLeft">
+        <section id="leftLogIn">
+          <script src="js/greet.js"></script>
+          <p id="signedInText"></p>
+          <a href="register.html"><button type="button" id="registerButton"></button></a>
+        </section>
+      </section>
+      <section id="mainCenter">
+        <section id="postMaker">
+          <p id="postMakerTitle">Plant a post</p>
+          <form id="skjemaa">
+              <input id="inpMelding" type="text" placeholder="Caption" autocomplete="off">
+              <input id="postMakerFile" type="file" accept="image/*" required>
+              <label id="fileLabel" for="postMakerFile" required>Choose Image (required)</label>
+              <div id="filename"></div>
+              <input type="submit" id="postSubmit" value="Plant">
+          </form>
+        </section>
+        <section id="sortMobile">
+          Sort posts by
+          <button class="sortButton" type="button" onClick="newest()">Newest</button>
+          <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
+        </section>
+        <section id="allPosts">
+          <section class="post">
+            <section class="postInfo">
+              <img class="postProfilePicture" src="pics/ico.png" title="Team Plantr">
+              <div class="postND">
+                <h1 class="postName" display="inline">
+                  <div id="verified">
+                    <img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px" title="Verified">
+                  </div>Team Plantr</h1>
+                <p class="postDate">19.03.2019</p>
+              </div>
+            </section>
+            <p class="postText">Welcome to <span class="green">Plantr</span> : )</p>
+            <p class="postText">Planr is a website where you can share images, with or without text. After you have signed in with Google you can start posting! Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
+            <p class="postText">Happy <span class="green">Planting</span> : )</p>
+          </section>
+        </section>
+        </section>
+      <section id="mainRight">
+        <p id="sortTextRight">Sort posts by</p>
+        <section id="sortButtons">
+          <button class="sortButton" type="button" onClick="newest()">Newest</button>
+          <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
+        </section>
+      </section>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
